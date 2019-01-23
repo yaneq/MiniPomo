@@ -45,7 +45,7 @@ export default class App extends Component<Props> {
       stack: {
         children: [{
           component: {
-            name: 'navigation.showName',
+            name: 'navigation.lottieTest',
             passProps: {
               text: 'stack with one child'
             },
