@@ -1,0 +1,3 @@
+rootProject.name = 'MiniPomo2'
+
+include ':app'
