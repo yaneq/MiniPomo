@@ -3,18 +3,17 @@
 import { Navigation } from "react-native-navigation";
 import {AppRegistry} from 'react-native';
 import App from './App/App';
-import ShowName from './App/components/show-name/show-name.component'
-import LottieTest from './App/components/lottie-test/lottie-test.component'
+import Home from './App/components/home/home.component'
+import Pomo from './App/components/pomo/pomo.component'
 
-Navigation.registerComponent(`navigation.playground.WelcomeScreen`, () => App);
-Navigation.registerComponent(`navigation.showName`, () => ShowName);
-Navigation.registerComponent(`navigation.lottieTest`, () => LottieTest);
+Navigation.registerComponent(`home`, () => Home);
+Navigation.registerComponent(`pomo`, () => Pomo);
 
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
     root: {
       component: {
-        name: "navigation.playground.WelcomeScreen"
+        name: "home"
       }
     }
   });

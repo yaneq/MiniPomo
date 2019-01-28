@@ -39,45 +39,4 @@ export default class App extends Component<Props> {
       </View>
     );
   }
-
-  _showName = () => {
-    Navigation.showModal({
-      stack: {
-        children: [{
-          component: {
-            name: 'navigation.lottieTest',
-            passProps: {
-              text: 'stack with one child'
-            },
-            options: {
-              topBar: {
-                title: {
-                  text: 'Modal'
-                }
-              }
-            }
-          }
-        }]
-      }
-    });
-  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
