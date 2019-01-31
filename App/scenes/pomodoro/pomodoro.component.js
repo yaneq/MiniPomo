@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import LottieView from 'lottie-react-native';
+import { styles } from './pomodoro.styles'
 
-export default class Pomo extends Component {
+export default class PomodoroComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +12,7 @@ export default class Pomo extends Component {
 
   render() {
     return (
-      <View style={styles.containter}>
+      <View style={styles.container}>
         <Text>Time is {123}</Text>
         <LottieView
             source={require('../../../data/data.json')}
@@ -22,10 +23,3 @@ export default class Pomo extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-    containter: {
-        backgroundColor: "#dddddd",
-        flex: 1,
-    }
-})
