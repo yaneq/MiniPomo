@@ -1,0 +1,4 @@
+export const TIMER_ACTIONS = {
+  SET_TIMER: 'SET_TIMER',
+  CLEAR_TIMER: 'CLEAR_TIMER',
+};
