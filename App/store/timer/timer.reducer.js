@@ -10,7 +10,7 @@ export const timerReducer = (
 ) => {
   switch (action.type) {
     case TIMER_ACTIONS.SET_TIMER:
-      return { ...state, timer_started_at: 'store value set' };
+      return { ...state, timer_started_at: new Date() };
     case TIMER_ACTIONS.CLEAR_TIMER:
       return { ...state, timer_started_at: 'store value cleared' };
     default:

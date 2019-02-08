@@ -1,7 +1,8 @@
 import { Navigation } from "react-native-navigation";
 import { SCENE_IDS } from '../../navigation/scene-identifiers'
 
-export const showName = () => {
+export const openPomodoro = () => {
+    this.props.setTimer();
     Navigation.showModal({
       stack: {
         children: [{
