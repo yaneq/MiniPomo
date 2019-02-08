@@ -15,23 +15,13 @@ import HomeComponent from '../scenes/home/home.component'
 
 export const initializeNavigation = (
     scenes,
-    // store,
-    // provider,
+    store,
+    provider,
     options,
   ) => {
-   
-    // registerSceneHelper, [store, provider]
-  
-    // Navigation.registerComponent(store, provider)
-    
     scenes.forEach((scene) => {
-        console.log('TEST');
-        console.log('scene', scene.screen, scene.component);
-        Navigation.registerComponent(scene.screen, () => scene.component);
+      Navigation.registerComponentWithRedux(scene.screen, () => scene.component, provider, store);
     })
-    
-    // Navigation.registerComponent('home', () => HomeComponent);
-
     // try {
     //   Navigation.startSingleScreenApp(options);
     //   return Promise.resolve(scenes);
