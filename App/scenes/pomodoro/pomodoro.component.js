@@ -13,8 +13,7 @@ export default class PomodoroComponent extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Time is {this.props.timer_started_at.toString()}</Text>
-        <LottieView
+        <Text>Time is {this.props.timer_started_at ? 'set' : ''}</Text>
             source={require('../../../data/data.json')}
             autoPlay
             loop

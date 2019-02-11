@@ -8,5 +8,6 @@ const mapStateToProps = state => {
 }
 
 export const PomodoroContainer = 
-  connect(mapStateToProps)
-(PomodoroComponent);
+  connect(
+    mapStateToProps
+  )(PomodoroComponent);

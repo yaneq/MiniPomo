@@ -1,7 +1,7 @@
 import { TIMER_ACTIONS } from './timer.constants';
 
 export const INITIAL_STATUS_STATE = {
-  timer_started_at: 'initial store value',
+  timer_started_at: null,
 };
 
 export const timerReducer = (
@@ -12,7 +12,7 @@ export const timerReducer = (
     case TIMER_ACTIONS.SET_TIMER:
       return { ...state, timer_started_at: new Date() };
     case TIMER_ACTIONS.CLEAR_TIMER:
-      return { ...state, timer_started_at: 'store value cleared' };
+      return { ...state, timer_started_at: null };
     default:
       return state;
   }
