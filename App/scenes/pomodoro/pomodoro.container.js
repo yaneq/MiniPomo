@@ -1,13 +1,16 @@
 import { connect } from 'react-redux';
-import PomodoroComponent from './pomodoro.component';
+import { PomodoroComponent } from './pomodoro.component';
+import { pomodoroConnector } from './pomodoro.selector'
+import { setRandom } from '../../store/common/common.actions'
 
-const mapStateToProps = state => {
+const mapDispatchToProps = dispatch => {
   return {
-    timer_started_at: state.timer.timer_started_at
+    setRandom: () => dispatch(setRandom())
   }
 }
 
 export const PomodoroContainer = 
   connect(
-    mapStateToProps
+    pomodoroConnector,
+    mapDispatchToProps
   )(PomodoroComponent);

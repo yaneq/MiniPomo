@@ -4,7 +4,7 @@ import { setTimer, clearTimer } from '../../store/timer/timer.actions'
 
 const mapStateToProps = state => {
   return {
-    timer_started_at: state.timer.timer_started_at
+    timerStartedAt: state.timer.timerStartedAt
   }
 }
 

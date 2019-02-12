@@ -14,7 +14,7 @@ export class HomeComponent extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Home is where the heart is!</Text>
-        <Text>Current time is {this.props.timer_started_at ? 'set' : ''}</Text>
+        <Text>Current time is {this.props.timerStartedAt ? 'set' : ''}</Text>
         <TouchableOpacity
           onPress={openPomodoro}
         >
