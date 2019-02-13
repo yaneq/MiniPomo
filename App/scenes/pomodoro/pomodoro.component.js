@@ -21,11 +21,14 @@ export class PomodoroComponent extends Component {
           Time is {this.props.timeAgo},
           Random is {this.props.random}
         </Text>
-        {/* <LottieView
-            source={require('../../../data/data.json')}
-            autoPlay
-            loop
-        ></LottieView> */}
+        <LottieView
+          style={styles.pomodoroAnimation}
+          source={require('../../../data/egg.json')}
+          autoPlay
+          loop
+          width={400}
+          height={400}
+          ></LottieView>
       </View>
     );
   }
