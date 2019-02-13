@@ -1,7 +1,8 @@
 import { TIMER_ACTIONS } from './timer.constants';
+import moment from 'moment'
 
 export const INITIAL_STATE = {
-  timerStartedAt: null,
+  timerFinishesAt: null,
 };
 
 export const timerReducer = (
@@ -10,9 +11,9 @@ export const timerReducer = (
 ) => {
   switch (action.type) {
     case TIMER_ACTIONS.SET_TIMER:
-      return { ...state, timerStartedAt: new Date() };
+      return { ...state, timerFinishesAt: moment(new Date()).add(30, 'm').toDate() };
     case TIMER_ACTIONS.CLEAR_TIMER:
-      return { ...state, timerStartedAt: null };
+      return { ...state, timerFinishesAt: null };
     default:
       return state;
   }

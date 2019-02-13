@@ -1,8 +1,12 @@
 // import moment from 'moment';
 
+export const minutesRemainingSelector = (state) => {
+
+}
+
 export const timeAgoSelector = (state) => {
-    return state.timer.timerStartedAt 
-        ? Math.round((new Date().getTime() - state.timer.timerStartedAt.getTime()) / 1000)
+    return state.timer.timerFinishesAt 
+        ? Math.round((state.timer.timerFinishesAt.getTime() - new Date().getTime()) / 1000)
         : 'no timer set'
 
 }
