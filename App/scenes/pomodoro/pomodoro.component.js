@@ -24,6 +24,7 @@ export class PomodoroComponent extends Component {
       {
         toValue: calculateTimePercentage(this.props.timerStartedAt, this.props.timerFinishesAt) || 0,
         duration: 900
+        useNativeDriver: true,
       },
     ).start();
     this.forceUpdate();
@@ -41,7 +42,7 @@ export class PomodoroComponent extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.timerContainer}>
-          <Text sytle={styles.timer}>
+          <Text style={styles.timer}>
             {calculateTimeUntil(this.props.timerFinishesAt)}
           </Text>
         </View>
