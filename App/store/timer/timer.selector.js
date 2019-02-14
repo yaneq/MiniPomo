@@ -10,9 +10,16 @@ export const calculateTimeUntil = (finishingTime) => {
   );
   let minutes = Math.floor(duration.asMinutes());
   let seconds = Math.floor(duration.asSeconds());
-  return (minutes >= 1)
-    ? minutes + " minutes"
-    : seconds + " seconds"
+
+  if (!duration.isValid()) {
+    return null
+  } else if (duration.asSeconds() <= 0) {
+    return 'Finished'
+  } else {
+    return (minutes >= 1)
+      ? (minutes + 1) + " minutes"
+      : seconds + " seconds"
+  }
 }
 
 export const calculateTimePercentage = (startTime, finishingTime) => {
