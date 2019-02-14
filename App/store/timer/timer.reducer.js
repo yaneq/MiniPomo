@@ -1,5 +1,6 @@
 import { TIMER_ACTIONS } from './timer.constants';
 import moment from 'moment'
+import config from '../../config'
 
 export const INITIAL_STATE = {
   timerFinishesAt: null,
@@ -15,7 +16,7 @@ export const timerReducer = (
       return {
         ...state,
         timerStartedAt: startTime,
-        timerFinishesAt: moment(startTime).add(10, 's').toDate()
+        timerFinishesAt: moment(startTime).add(config.timerDuration, 's').toDate()
       };
     case TIMER_ACTIONS.CLEAR_TIMER:
       return {
