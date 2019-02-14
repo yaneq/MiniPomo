@@ -16,32 +16,20 @@ const baseStyles = StyleSheet.create({
 export const styles = StyleSheet.create({
   ...baseStyles,
   container: {
-    backgroundColor: "#33ddff",
     flex: 1,
-    paddingTop: 50
-  },
-  controls: {
+    paddingTop: 20
   },
   pomodoroAnimationContainer: {
     flex: 1,
-    backgroundColor: '#00ff00'
   },
   pomodoroAnimation: {
     flex: 1,
-    backgroundColor: '#722673'
   },
   timerContainer: {
     padding: 30,
   },
   timer: {
-    fontSize: 50,
+    fontSize: 40,
+    fontWeight: 'bold',
   },
-  startButton: {
-    ...baseStyles.button,
-    borderColor: '#ff0000'
-  },
-  stopButton: {
-    ...baseStyles.button,
-    borderColor: '#ff0000'
-  }
 })
