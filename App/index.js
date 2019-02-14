@@ -15,7 +15,7 @@ Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
     root: {
       component: {
-        name: SCENE_IDS.HOME
+        name: SCENE_IDS.POMODORO
       }
     }
   });

@@ -1,34 +1,61 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Animated
+} from 'react-native';
 import LottieView from 'lottie-react-native';
 import { styles } from './pomodoro.styles'
+import { calculateTimeUntil, calculateTimePercentage } from '../../store/timer/timer.selector'
 
 export class PomodoroComponent extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      progress: new Animated.Value(0),
+    };
+  }
+
+  tick() {
+    Animated.timing(
+      this.state.progress,
+      {
+        toValue: calculateTimePercentage(this.props.timerStartedAt, this.props.timerFinishesAt) || 0,
+        duration: 900
+      },
+    ).start();
+    this.forceUpdate();
   }
 
   componentDidMount() {
-    setInterval(() => {
-      this.props.setRandom()
-    }, 1000 )
+    this.interval = setInterval(
+      this.tick.bind(this),
+      1000
+    )
   }
 
   render() {
+    let { setTimer, clearTimer } = this.props
     return (
       <View style={styles.container}>
-        <Text>
-          Time is {this.props.timeAgo},
-          Random is {this.props.random}
-        </Text>
-        <LottieView
-          style={styles.pomodoroAnimation}
-          source={require('../../../data/egg.json')}
-          autoPlay
-          loop
-          width={400}
-          height={400}
-          ></LottieView>
+        <View style={styles.timerContainer}>
+          <Text sytle={styles.timer}>
+            {calculateTimeUntil(this.props.timerFinishesAt)}
+          </Text>
+        </View>
+        <TouchableOpacity
+          style={styles.pomodoroAnimationContainer}
+          onPress={this.props.setTimer}
+        >
+          <LottieView
+            style={styles.pomodoroAnimation}
+            source={require('../../../data/egg.json')}
+            progress={this.state.progress}
+            >
+          </LottieView>
+        </TouchableOpacity>
       </View>
     );
   }

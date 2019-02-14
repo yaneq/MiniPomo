@@ -11,9 +11,18 @@ export const timerReducer = (
 ) => {
   switch (action.type) {
     case TIMER_ACTIONS.SET_TIMER:
-      return { ...state, timerFinishesAt: moment(new Date()).add(30, 'm').toDate() };
+      let startTime = new Date()
+      return {
+        ...state,
+        timerStartedAt: startTime,
+        timerFinishesAt: moment(startTime).add(10, 's').toDate()
+      };
     case TIMER_ACTIONS.CLEAR_TIMER:
-      return { ...state, timerFinishesAt: null };
+      return {
+        ...state,
+        timerStartedAt: null,
+        timerFinishesAt: null
+      };
     default:
       return state;
   }
