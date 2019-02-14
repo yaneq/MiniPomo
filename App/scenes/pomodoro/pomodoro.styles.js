@@ -31,5 +31,6 @@ export const styles = StyleSheet.create({
   timer: {
     fontSize: 40,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
 })
