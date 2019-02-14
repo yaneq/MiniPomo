@@ -23,7 +23,7 @@ export class PomodoroComponent extends Component {
       this.state.progress,
       {
         toValue: calculateTimePercentage(this.props.timerStartedAt, this.props.timerFinishesAt) || 0,
-        duration: 900
+        duration: 900,
         useNativeDriver: true,
       },
     ).start();
