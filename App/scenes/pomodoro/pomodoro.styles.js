@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
   },
   pomodoroAnimationContainer: {
     flex: 1,
+    margin: 60,
   },
   pomodoroAnimation: {
     flex: 1,
